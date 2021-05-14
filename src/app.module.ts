@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
+import { User } from './auth/user.entity';
+import { Task } from './task/task.entity';
 import { TaskModule } from './task/task.module';
 
 @Module({
@@ -13,9 +15,8 @@ import { TaskModule } from './task/task.module';
       username: 'admin',
       password: 'postgres',
       database: 'task_db',
-      entities: ['dist/**/*.entity{.ts,.js}'],
+      entities: [User, Task],
       synchronize: true,
-      autoLoadEntities: true,
     }),
     TaskModule,
   ],

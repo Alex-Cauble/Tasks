@@ -2,6 +2,7 @@ import {
   Column,
   PrimaryGeneratedColumn,
   Unique,
+  Entity,
   OneToMany,
   BaseEntity,
 } from 'typeorm';
@@ -9,6 +10,7 @@ import * as bcrypt from 'bcryptjs';
 import { Task } from 'src/task/task.entity';
 
 @Unique(['username'])
+@Entity()
 export class User extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
