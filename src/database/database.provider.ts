@@ -1,3 +1,5 @@
+import { User } from 'src/auth/user.entity';
+import { Task } from 'src/task/task.entity';
 import { createConnection } from 'typeorm';
 
 export const databaseProviders = [
@@ -11,7 +13,8 @@ export const databaseProviders = [
         username: 'admin',
         password: 'postgres',
         database: 'task_db',
-        entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+        entities: [Task, User],
+        logging: true,
         synchronize: true,
       }),
   },

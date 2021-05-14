@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
-import { DatabaseModule } from './database/database.module';
 import { TaskModule } from './task/task.module';
 
 @Module({
@@ -18,7 +17,6 @@ import { TaskModule } from './task/task.module';
       synchronize: true,
       autoLoadEntities: true,
     }),
-    DatabaseModule,
     TaskModule,
   ],
   controllers: [],
