@@ -3,5 +3,17 @@
     "POSTGRES",
     "nestjs",
     "typeorm"
+  ],
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "task_db",
+      "database": "task_db",
+      "username": "admin"
+    }
   ]
 }
