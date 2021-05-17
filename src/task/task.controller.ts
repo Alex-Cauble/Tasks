@@ -24,14 +24,13 @@ import { GetUser } from '../auth/get-user.decorator';
 import { User } from '../auth/user.entity';
 import { Request } from 'express';
 
-@Controller('tasks')
+@Controller('task')
 @UseGuards(AuthGuard('jwt'))
 export class TasksController {
   constructor(private tasksService: TasksService) {}
 
   @Get()
   getTasks(
-    @Req() req: Request,
     @Query(ValidationPipe) filterDTO: TaskFilterDTO,
     @GetUser() user: User,
   ): Promise<Task[]> {
