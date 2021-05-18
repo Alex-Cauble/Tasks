@@ -22,7 +22,10 @@ export class Task extends BaseEntity {
   @Column()
   status: TaskStatus;
 
-  @ManyToOne(() => User, (user) => user.tasks, { eager: false })
+  @ManyToOne(() => User, (user) => user.tasks, {
+    eager: false,
+    onDelete: 'CASCADE',
+  })
   user: User;
 
   @Column()
